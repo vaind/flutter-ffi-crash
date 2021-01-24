@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
+import 'package:objectbox/src/bindings/bindings.dart';
+import 'package:objectbox/src/bindings/helpers.dart';
+import 'dart:ffi' as ffi;
+
 void main() {
   runApp(MyApp());
+
+  bindings.obx_store_open(ffi.nullptr);
+  print(latestNativeError());
 }
 
 class MyApp extends StatelessWidget {
